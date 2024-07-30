@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counting of words and characters</title>
+</head>
+<body>
+    <label>Enter Statement:</label><br>
+    <textarea name="text" id="text1"></textarea><br>
+    <button onclick="getCount()">Submit</button>
+
+    <script type="text/javascript">
+        function getCount() {
+            var statement = document.getElementById("text1").value;
+            var length = statement.length;
+            
+            var char_Count = 0;
+            var word=0;
+            for (var i = 0; i < statement.length; i++) 
+            {
+                if (statement[i] !== ' ' && statement[i] !== '\n' && statement[i] !== '\t' && statement[i] !== '\r') 
+                {
+                    char_Count++;
+                }
+                if ((i === 0 || statement[i - 1] === ' ' || statement[i - 1] === '\n' || statement[i - 1] === '\t' || statement[i - 1] === '\r') && statement[i] !== ' ' && statement[i] !== '\n' && statement[i] !== '\t' && statement[i] !== '\r')
+             {
+                    word++;
+                }
+            }
+            
+
+            alert("Length of Statement: " + length +"\nNumber of Characters:"+ char_Count+"\nWords"+word);
+        }
+    </script>
+</body>
+</html>
